@@ -25,7 +25,7 @@ if debug == True:
     config = json_file_to_dict('config.json')
     token = config["X-Auth-Token"]
 else:
-    token = ENV['X-Auth-Token']
+    token = os.environ['X-Auth-Token']
 
 header = {'X-Auth-Token': token}
 
