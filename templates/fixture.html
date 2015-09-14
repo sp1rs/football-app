@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Fixture</title>
+        <link rel=stylesheet type=text/css href="../static/css/bootstrap.min.css">
+    
+    </head>
+
+    <body>
+    <div class= "wrapper" align="center">
+        <div class ="container" vertical-align="middle">
+        <div class="row vertical-center-row">
+            <div class="title">
+                <h1>Fixture</h1>
+            </div>
+            <br/> <br/> <br/>
+            <div id="content">
+                <table class="table table-striped">
+                    <th> Home Team </th>
+                    <th> Away Team </th>
+                    <th> Result </th>
+                    {% for d in data %}
+                        <tr>
+                            <td> {{d.homeTeamName}} </td>
+                            <td> {{d.awayTeamName}}</td>
+                            {% if d['result'].goalsHomeTeam != -1 %}
+                                <td> {{ d['result'].goalsHomeTeam }} - {{ d['result'].goalsAwayTeam}} </td>
+                            {% else %}
+                                <td> Not Yet Played </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>    
+            </div>
+            <div class="title">
+                <h1>Flask code</h1>
+            </div>
+
+        </div>
+        </div>
+    </body>
+    <body>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>

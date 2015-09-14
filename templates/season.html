@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Enter the season</title>
+        <link rel=stylesheet type=text/css href="../static/css/bootstrap.min.css">
+    
+    </head>
+
+    <body>
+    <div class= "wrapper" align="center">
+        <div class ="container" vertical-align="middle">
+        <div class="row vertical-center-row">
+            <div class="title">
+                <h1>Select the Season</h1>
+            </div>
+            <br/> <br/> <br/>
+            <div id="content">
+                <form roles = "form" class = "form-horizontal" method="post" action="{{ url_for('season') }}">
+               
+                    <select  name="cars">
+                        {% for d in data %}
+
+                    <option value="{{d['_links']['teams']}}">{{d['caption']}}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <br>
+                    <input type="submit" />
+                </form>
+            </div>
+            </div>
+            <div class="title">
+                <h1>Flask code</h1>
+            </div>
+
+        </div>
+        </div>
+    </body>
+    <body>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>
