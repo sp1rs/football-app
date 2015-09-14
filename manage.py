@@ -20,7 +20,7 @@ else:
     debug = True
 
 token = None
-if debug == True
+if debug == True:
     config = json_file_to_dict('config.json')
     token = config["X-Auth-Token"]
 else:
