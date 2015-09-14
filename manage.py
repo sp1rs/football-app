@@ -11,9 +11,22 @@ def json_file_to_dict(_file):
         config_file = open(_file)
         config = json.load(config_file)
         return config
-config = json_file_to_dict('config.json')
 
-header = {'X-Auth-Token': config["X-Auth-Token"]}
+debug = True
+
+if 'DYNO' in os.environ:
+    debug = False
+else:
+    debug = True
+
+token = None
+if debug == True
+    config = json_file_to_dict('config.json')
+    token = config["X-Auth-Token"]
+else:
+    token = ENV['X-Auth-Token']
+
+header = {'X-Auth-Token': token}
 
 @app.route('/')
 def hello():
