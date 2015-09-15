@@ -1,1 +1,1 @@
-web: gunicorn  manager.py --log-file -
+web: python maanger.py
