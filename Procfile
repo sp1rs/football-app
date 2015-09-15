@@ -1,1 +1,1 @@
-python manage.py runserver -p $port
+python manage.py runserver
