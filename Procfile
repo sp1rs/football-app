@@ -1,1 +1,1 @@
-web: python maanger.py
+web: python manager.py
