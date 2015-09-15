@@ -1,1 +1,1 @@
-python manage.py runserver -p 5000
+python manage.py runserver -p $port
