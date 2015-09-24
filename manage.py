@@ -3,7 +3,9 @@ import requests
 import json
 import ast
 import os
+import sys
 import logging
+import time
 app = Flask(__name__)
 
 
@@ -15,8 +17,6 @@ def json_file_to_dict(_file):
         return config
 
 debug = True
-
-print os.environ
 
 if 'DYNO' in os.environ:
     debug = False
@@ -33,9 +33,8 @@ header = {'X-Auth-Token': token}
 
 @app.route('/')
 def hello():
-    print "hello"
-    r = requests.get('http://api.football-data.org/alpha/soccerseasons' , headers= header)
-    print "Response " ,r
+    r =   requests.get('http://api.football-data.org/alpha/soccerseasons' , headers= header)
+    time.sleep(5)
     data = json.loads(dict(vars(r))['_content'])
     print "Data ",data
     return render_template('season.html',data=data)
