@@ -35,9 +35,9 @@ header = {'X-Auth-Token': token}
 def hello():
     print "hello"
     r = requests.get('http://api.football-data.org/alpha/soccerseasons' , headers= header)
-    print r
+    print "Response " ,r
     data = json.loads(dict(vars(r))['_content'])
-    print data
+    print "Data ",data
     return render_template('season.html',data=data)
 
 @app.route('/season',methods=['POST'])
