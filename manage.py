@@ -16,6 +16,8 @@ def json_file_to_dict(_file):
 
 debug = True
 
+print os.environ
+
 if 'DYNO' in os.environ:
     debug = False
 else:
