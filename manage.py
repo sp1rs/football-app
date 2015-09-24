@@ -29,13 +29,15 @@ if debug == True:
     token = config["X-Auth-Token"]
 else:
     token = os.environ['X-Auth-Token']
-
 header = {'X-Auth-Token': token}
 
 @app.route('/')
 def hello():
+    print "hello"
     r = requests.get('http://api.football-data.org/alpha/soccerseasons' , headers= header)
+    print r
     data = json.loads(dict(vars(r))['_content'])
+    print data
     return render_template('season.html',data=data)
 
 @app.route('/season',methods=['POST'])
